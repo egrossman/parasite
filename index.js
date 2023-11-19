@@ -5,6 +5,8 @@ const cors = require('cors');
 app.use(cors())
 console.log(app)
 
+app.use(express.static('client/build'));
+
 app.get('/', (req, res) => {
       res.send('Hello from our server!')
 })
