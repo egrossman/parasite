@@ -14,7 +14,7 @@ const TextBoxes = () => {
   <input type="submit" value="Submit" />
 </form>
 
-<div id="quotes">
+<div id="quotes" className="m1">
     <p>Lorem Ipsum my friends</p>
     <p>My Kingdom for an AI!</p>
     <p>Sam Altman's Ghost lives on!</p>
