@@ -4,6 +4,11 @@ import './App.css';
 import React from "react";
 import ChatBot from "react-simple-chatbot";
 import { Segment } from "semantic-ui-react";
+import { Routes, Route } from 'react-router-dom';
+
+import Home from './Pages/Home';
+import TextBoxes from './Pages/TextBoxes';
+import Products from './Pages/Products';
 
 
 const apiCall = () => {
@@ -31,24 +36,44 @@ function App() {
     trigger: "waiting"
   }]
 
-  return (
-    <div className="App">
-      <header className="App-header">
+  // return (
+  //   <div className="App">
+  //     <header className="App-header">
 
-        <div>
-          <button onClick={apiCall}>Make API Call</button>
-        </div>
-        <>
-          <Segment floated="right">
+  //       <div>
+  //         <button onClick={apiCall}>Make API Call</button>
+  //       </div>
+  //       <>
+          
+  //       </>
+  //     </header>
+
+  //   </div>
+
+  // );
+return(
+  <>
+  <Routes>
+     <Route path="/" element={<Home />} />
+     <Route path="/products" element={<Products />} />
+     <Route path="/text" element={<TextBoxes />} />
+  </Routes>
+  <Segment floated="right">
             <ChatBot steps={steps}></ChatBot>
-          </Segment>
-        </>
-      </header>
+  </Segment>
+</>);
+ }
 
-    </div>
+// return (
+//   <div className="App">
+//     <header className="App-header">
 
-  );
-}
+//       <div>
+//       <button onClick={apiCall}>Make API Call</button>
+//       </div>
+//     </header>
+//   </div>
+// );
 
 
 // module.exports = function(app) {
